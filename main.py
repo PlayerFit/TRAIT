@@ -16,6 +16,8 @@ def build_trait(player):
         tweet_count = player.tweet_count
         followers = player.follower_count
         verified = player.verified
+        perc_retweets = execute_query([num_retweets, player.id]) / float(player.tweet_count)
+        #TODO add/pick the rest of the fields
     )
     session.merge(t)
 

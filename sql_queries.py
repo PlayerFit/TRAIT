@@ -12,6 +12,6 @@ def build_query(*args):
 list_of_times = *** #(list) list of tweet times adjusted by UTC offset
 num_deleted_tweets = *** #(int) total number of deleted tweets DONT KNOW IF POSSIBLE
 location_on = *** #(int) number of tweets with location tracking on
-list_of_favorites = "select favorite_count from tweet where user_id = {};".format(player_id) #(list) list of number of favorites per tweet
-list_of_retweets = "select retweet_count from tweet where user_id = {};".format(player_id) #(list) list of number of retweets per tweet
-num_retweets = *** #(int) number of times player has retweeted anything DONT KNOW IF POSSIBLE
+list_of_favorites = "select favorite_count from tweet where user_id = {};" # FORMAT ARGS: player_id
+list_of_retweets = "select retweet_count from tweet where user_id = {};" # FORMAT ARGS: player_id
+num_retweets = "select count(*) from tweet where user_id = {} and retweet = True" # FORMAT ARGS: player_id
